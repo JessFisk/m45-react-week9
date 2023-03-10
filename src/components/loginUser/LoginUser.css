@@ -1,12 +1,12 @@
-.loginuser-wrapper{
-    display:flex;
+.loginuser-wrapper {
+    display: flex;
     flex-direction: column;
     width: 80%;
     border: 2px solid purple
-
 }
-.login-user-form{
-    display:flex;
+
+.login-user-form {
+    display: flex;
     flex-direction: column;
-    height:30vh
+    height: 30vh
 }

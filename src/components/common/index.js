@@ -3,14 +3,19 @@ export const writeCookie = (key, value, days = 365) => {
 
     date.setDate(date.getDate() + days)
 
-    const cookie = (document.cookie = 
+    const cookie = (document.cookie =
         key + "=" + value + "; expires" + date.toGMTString() + "; path=/");
 
-        console.log("cookie in utils/index.js; ", cookie);
+    console.log("cookie in utils/index.js; ", cookie);
 
-        return cookie;
+    return cookie;
 
 };
+
+
+
+
+
 
 export const getTokenFromCookie = (cookieName) => {
     const expression = new RegExp(`(?<=${cookieName}=)[^;]*`)
@@ -25,4 +30,3 @@ export const getTokenFromCookie = (cookieName) => {
     }
 };
 
-// `(?<=${cookieName}=)[^;]*`

@@ -1,5 +1,6 @@
 import { writeCookie, getTokenFromCookie } from "../components/common";
 
+
 export const addUser = async (username, email, password) => {
     try {
         const response = await fetch("http://localhost/users/register", {
@@ -15,11 +16,17 @@ export const addUser = async (username, email, password) => {
             }),
         });
         const data = await response.json();
-        
+
     } catch (error) {
         console.log(error)
     }
 }
+
+
+
+
+
+
 
 export const loginUser = async (username, password, setUser) => {
     try {
@@ -36,13 +43,19 @@ export const loginUser = async (username, password, setUser) => {
         });
 
         const data = await response.json();
-        
+
         setUser(data.user);
         writeCookie("jwt_token", data.user.token, 7);
     } catch (error) {
         console.log(error);
     }
 };
+
+
+
+
+
+
 
 export const getAllUsers = async () => {
     try {
@@ -64,6 +77,10 @@ export const getAllUsers = async () => {
 }
 
 
+
+
+
+
 export const authCheck = async (jwtToken) => {
     try {
         const response = await fetch("http://localhost/users/authcheck", {
@@ -74,11 +91,9 @@ export const authCheck = async (jwtToken) => {
                 Authorization: `${jwtToken}`,
             },
         });
-        
-        const data =  await response.json();
+
+        const data = await response.json();
         data.user.token = jwtToken;
-        
-        
 
         return data.user;
     } catch (error) {
