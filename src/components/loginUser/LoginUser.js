@@ -10,7 +10,7 @@ const LoginUser = ({user, setUser}) => {
 
     const onLoginSubmit = async (e) => {
         e.preventDefault();
-        console.log(username, password)
+        // console.log(username, password)
         await loginUser (username, password, setUser)
     }
 
@@ -31,7 +31,7 @@ const LoginUser = ({user, setUser}) => {
                     />
                 </label>
                 <button type= "submit">Login</button>
-            </form>
+                </form>
         </div>
     </div>
 }

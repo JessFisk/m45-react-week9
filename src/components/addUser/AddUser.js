@@ -10,7 +10,7 @@ const AddUser = (user, setUser) => {
 
     const onRegisterSubmit = async (e) => {
         e.preventDefault();
-        console.log(username, email, password)
+        // console.log(username, email, password)
 
         await addUser(username, email, password)
     }
