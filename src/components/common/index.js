@@ -25,3 +25,4 @@ export const getTokenFromCookie = (cookieName) => {
     }
 };
 
+// `(?<=${cookieName}=)[^;]*`

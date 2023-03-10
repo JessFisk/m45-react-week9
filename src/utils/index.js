@@ -15,7 +15,7 @@ export const addUser = async (username, email, password) => {
             }),
         });
         const data = await response.json();
-        console.log("data: ", data);
+        
     } catch (error) {
         console.log(error)
     }
@@ -36,8 +36,7 @@ export const loginUser = async (username, password, setUser) => {
         });
 
         const data = await response.json();
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!")   
-        console.log(data)
+        
         setUser(data.user);
         writeCookie("jwt_token", data.user.token, 7);
     } catch (error) {
@@ -49,7 +48,7 @@ export const getAllUsers = async () => {
     try {
         const token = getTokenFromCookie("jwt_token")
 
-        const response = await fetch("http://localhost/users/register", {
+        const response = await fetch("http://localhost/users/getallusers", {
             method: "GET",
             mode: "cors",
             headers: {
@@ -75,10 +74,8 @@ export const authCheck = async (jwtToken) => {
                 Authorization: `${jwtToken}`,
             },
         });
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        console.log (response)
+        
         const data =  await response.json();
-        console.log(data)
         data.user.token = jwtToken;
         
         

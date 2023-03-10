@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   const logOut = (e) => {
-    e.preentDefault()
+    e.preventDefault()
     setUser({
       username: null,
       email: null,
@@ -48,7 +48,7 @@ function App() {
   const loginWithToken = async (token) => {
     const persistantUser = await authCheck(token);
 
-    await setUser(persistantUser.user);
+    await setUser(persistantUser);
   }
 
 
